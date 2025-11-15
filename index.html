@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lock‑In Alarm</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-  <body>
-    <button onclick="lockin()">testing</button>
-    <div id="lockin" style="opacity: 0;">
-      <h1>can you lock tf in</h1>
-      <img src="https://imgs.search.brave.com/2WTWQd4RqdMi84WlmRulsl008t-OHEU3__52-cPbvyA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmt5/bS1jZG4uY29tL3Bo/b3Rvcy9pbWFnZXMv/bmV3c2ZlZWQvMDAy/LzY5My8yODIvNWNi" alt="ABSOLUTE CINEMA" height="300" width="500">
-    </div>
-    <script src="main.js"></script>
-  </body>
+<body>
+  <div id="container">
+    <h1>lock‑in alarm</h1>
+
+    <label>interval (minutes)</label>
+    <input id="intervalInput" type="number" min="1" placeholder="30" />
+
+    <label>message (speech bubble)</label>
+    <input id="msgInput" type="text" placeholder="stay focused" />
+
+    <label>image url</label>
+    <input id="imgInput" type="text" placeholder="https://…" />
+
+    <label>custom sound (default: vine boom)</label>
+    <input id="soundInput" type="file" accept="audio/*" />
+
+    <button id="startBtn">start</button>
+    <button id="stopBtn">stop</button>
+  </div>
+
+  <!-- popup -->
+  <div id="popup" class="hidden">
+    <img id="popupImg" />
+    <div id="speechBubble"></div>
+  </div>
+
+  <!-- default sound -->
+  <audio id="beep" src="./vine-boom.mp3"></audio>
+
+  <script src="main.js"></script>
+</body>
 </html>
